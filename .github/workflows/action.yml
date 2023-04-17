@@ -1,0 +1,28 @@
+name: My Workflow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    env:
+      CLOUDINARY_CLOUD_NAME: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+      CLOUDINARY_KEY: ${{ secrets.CLOUDINARY_KEY }}
+      CLOUDINARY_SECRET: ${{ secrets.CLOUDINARY_SECRET }}
+      MAPBOX_TOKEN: ${{ secrets.MAPBOX_TOKEN }}
+      DB_URL: ${{ secrets.DB_URL }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Print secrets
+        run: |
+          echo "CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}"
+          echo "CLOUDINARY_KEY=${CLOUDINARY_KEY}"
+          echo "CLOUDINARY_SECRET=${CLOUDINARY_SECRET}"
+          echo "MAPBOX_TOKEN=${MAPBOX_TOKEN}"
+          echo "DB_URL=${DB_URL}"
