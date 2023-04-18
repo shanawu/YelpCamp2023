@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build",
-    "test": "npm run test"
+    "start": "node index.js",
+    "build": "npm run clean && npm run build:client && npm run build:server",
+    "clean": "rimraf dist",
+    "build:client": "webpack --config webpack.config.client.js",
+    "build:server": "webpack --config webpack.config.server.js",
+    "deploy": "node deploy.js"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +25,8 @@
     "ejs-mate": "^4.0.0",
     "escape-html": "^1.0.3",
     "express": "^4.18.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "express-mongo-sanitize": "^2.2.0",
     "express-session": "^1.17.3",
     "helmet": "^6.1.5",
