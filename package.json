@@ -2,14 +2,14 @@
   "name": "yelpcamp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "build": "npm run clean && npm run build:client && npm run build:server",
     "clean": "rimraf dist",
     "build:client": "webpack --config webpack.config.client.js",
     "build:server": "webpack --config webpack.config.server.js",
-    "deploy": "node deploy.js"
+    "deploy": "node app.js"
   },
   "keywords": [],
   "author": "",
