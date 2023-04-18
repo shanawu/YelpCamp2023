@@ -193,10 +193,8 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err });
 })
 
-
 // process.env.PORT the actual port variable 
-const port = 'https://yelp-camp-2023-4nip.onrender.com'
-// const port = process.env.PORT || '8000';
+const port = process.env.PORT || '8000';
 
 app.listen(port, () => {
     console.log(`Serving on port ${port}`)
